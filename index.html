@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yury Tvardovsky</title>
+  <link rel="stylesheet" href="/retro_md.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.min.js" integrity="sha512-SYfDUYPg5xspsG6OOpXU366G8SZsdHOhqk/icdrYJ2E/WKZxPxze7d2HD3AyXpT7U22PZ5y74xRpqZ6A2bJ+kQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div id="output"></div>
+  <script>
+    fetch('/yc_en.md')
+      .then((response) => response.text())
+      .then((text) => {
+        document.getElementById('output').innerHTML =  window.markdownit().render(text);
+    })
+  </script>
+</body>
+
+</html>
